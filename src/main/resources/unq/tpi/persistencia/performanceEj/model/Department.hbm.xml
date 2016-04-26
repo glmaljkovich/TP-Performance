@@ -11,17 +11,17 @@
 
 		<property name="name" column="dept_name" />
 
-		<set name="employees" table="dept_emp" where="to_date = '9999-01-01'" lazy="false" fetch="join">
+		<set name="employees" table="dept_emp" where="to_date = '9999-01-01'" lazy="true" fetch="join">
 			<key column="dept_no"/>
 			<many-to-many column="emp_no" class="unq.tpi.persistencia.performanceEj.model.Employee" />
 		</set>
 
-		<set name="historicEmployees" table="dept_emp" where="to_date != '9999-01-01'">
+		<set name="historicEmployees" table="dept_emp" where="to_date != '9999-01-01'" lazy="true">
 			<key column="dept_no"/>
 			<many-to-many column="emp_no" class="unq.tpi.persistencia.performanceEj.model.Employee" />
 		</set>
 
-		<bag name="managers" table="dept_manager" order-by="from_date">
+		<bag name="managers" table="dept_manager" order-by="from_date" lazy="true">
 			<key column="dept_no"/>
 			<many-to-many column="emp_no" class="unq.tpi.persistencia.performanceEj.model.Employee" />
 		</bag>

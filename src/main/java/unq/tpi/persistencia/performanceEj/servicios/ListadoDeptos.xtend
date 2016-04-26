@@ -11,7 +11,7 @@ class ListadoDeptos extends AbstractListado {
 	override doListado() throws Exception {
 		this.addColumn("Codigo").addColumn("Nombre").addColumn("Manager").newLine()
 		
-		val deptos = new DepartmentDAO().getAll()
+		val deptos = new DepartmentDAO().getAllForListing()
 		deptos.forEach[
 			addColumn(it.code)
 			addColumn(it.name)

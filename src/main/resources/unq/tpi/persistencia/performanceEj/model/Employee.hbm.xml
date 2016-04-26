@@ -25,27 +25,27 @@
 
 		<property name="hireDate" column="hire_date" />
 
-		<set name="departments" table="dept_emp" where="to_date = '9999-01-01'">
+		<set name="departments" table="dept_emp" where="to_date = '9999-01-01'" lazy="true">
 			<key column="emp_no" />
 			<many-to-many column="dept_no" class="unq.tpi.persistencia.performanceEj.model.Department" />
 		</set>
 
-		<bag name="historicDepartments" table="dept_emp" where="to_date != '9999-01-01'" order-by="from_date">
+		<bag name="historicDepartments" table="dept_emp" where="to_date != '9999-01-01'" order-by="from_date" lazy="true">
 			<key column="emp_no" />
 			<many-to-many column="dept_no" class="unq.tpi.persistencia.performanceEj.model.Department" />
 		</bag>
 
-		<set name="titles" table="titles" where="to_date = '9999-01-01'" lazy="false" fetch="join">
+		<set name="titles" table="titles" where="to_date = '9999-01-01'" lazy="true" fetch="join">
 			<key column="emp_no" />
 			<element column="title" type="java.lang.String" />
 		</set>
 
-		<bag name="historicTitles" table="titles" where="to_date != '9999-01-01'" order-by="from_date">
+		<bag name="historicTitles" table="titles" where="to_date != '9999-01-01'" order-by="from_date" lazy="true">
 			<key column="emp_no" />
 			<element column="title" type="java.lang.String" />
 		</bag>
 		
-		<bag name="salaries" order-by="from_date" lazy="false" fetch="join">
+		<bag name="salaries" order-by="from_date" lazy="true" fetch="join">
 			<key column="emp_no" />
 			<one-to-many class="unq.tpi.persistencia.performanceEj.model.Salary" />
 		</bag>
