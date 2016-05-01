@@ -21,7 +21,7 @@ class ListadoMaximosSalarios extends AbstractListado {
 		addColumn("Nombre").addColumn("Sueldo").newLine()
 		(0..9).forEach[
 			val e = empleados.get(it)
-			addColumn(e.getFullName()).addColumn(e.getSalary().getAmount()).newLine()
+			addColumn(e.getFullName()).addColumn(e.getSalary()).newLine()
 		]
 	}
 }

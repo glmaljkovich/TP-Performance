@@ -28,11 +28,11 @@ class EmployeeDAO {
 
 	def getAllForListing(){
 		val session = SessionManager.getSession()
-		val query = session.createQuery("select employee.firstName as firstName, employee.lastName as lastName, salary as salary 
-											from Employee as employee
-											inner join employee.salaries as salary
-											where salary.to='9999-01-01' 
-											order by salary.amount DESC")
+		val query = session.createQuery("select employee.firstName as firstName, employee.lastName as lastName, salarie.amount as salary 
+											from Employee as employee 
+											inner join employee.salaries as salarie 
+											where salarie.amount = (select max(salarie2.amount) from Employee as e inner join e.salaries as salarie2 where e.id = employee.id)
+											order by salarie.amount DESC")
 		query.setResultTransformer(Transformers.aliasToBean(typeof(EmployeeListingDTO)))
 		query.list() as List<EmployeeListingDTO>
 	}

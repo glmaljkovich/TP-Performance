@@ -7,7 +7,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 class EmployeeListingDTO {
 	String firstName
 	String lastName
-	Salary salary
+	Double salary
 	
 	def String getFullName() {
 		lastName + ", " + firstName
