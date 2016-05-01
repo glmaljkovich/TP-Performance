@@ -3,8 +3,8 @@ package unq.tpi.persistencia.performanceEj.daos
 import java.util.List
 import unq.tpi.persistencia.performanceEj.model.Department
 import unq.tpi.persistencia.util.SessionManager
-import org.hibernate.transform.ResultTransformer
 import org.hibernate.transform.Transformers
+import unq.tpi.persistencia.performanceEj.dtos.DepartmentListingDTO
 
 class DepartmentDAO {
 

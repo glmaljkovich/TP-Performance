@@ -70,12 +70,12 @@ abstract class AbstractListado {
 		this
 	}
 
-	protected def addColumn(Number col) throws Exception {
+	def addColumn(Number col) throws Exception {
 		fw.append(String.valueOf(col)).append(COLUMN_SEPARATOR)
 		this
 	}
 	
-	protected def addColumn(Date date) {
+	def addColumn(Date date) {
 		try {
 			this.addColumn(new SimpleDateFormat("dd-MM-yyyy").format(date))
 		} catch (Exception e) {
@@ -83,7 +83,7 @@ abstract class AbstractListado {
 		}
 	}
 	
-	protected def newLine() throws Exception{
+	def newLine() throws Exception{
 		fw.append(LINE_SEPARATOR)
 		this
 	}
