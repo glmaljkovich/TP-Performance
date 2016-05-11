@@ -1,4 +1,4 @@
-package unq.tpi.persistencia.performanceEj.daos
+package unq.tpi.persistencia.performanceEj.dtos
 
 import org.eclipse.xtend.lib.annotations.Accessors
 

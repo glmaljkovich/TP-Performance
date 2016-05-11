@@ -6,6 +6,7 @@ import unq.tpi.persistencia.util.SessionManager
 import org.hibernate.transform.Transformers
 import unq.tpi.persistencia.performanceEj.dtos.DepartmentListingDTO
 import unq.tpi.persistencia.performanceEj.dtos.DepartmentWithEmployeesDTO
+import unq.tpi.persistencia.performanceEj.dtos.EmployeesPaymentDTO
 
 class DepartmentDAO {
 
